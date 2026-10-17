@@ -14,5 +14,5 @@ The objective of this assignment is to develop practical skills in Power BI and 
 
 In Data Analytics there are many tools to explore the massive volume data and get insight from the datasets for the business progress. Power Bi is the popular visualization and BI tool developed by Microsoft. 
 
-** Basic purpose of using Power BI is to process the Raw data into clean actionable insight and making the massive information easy to understand using the visualizations. 
+**Basic purpose of using Power BI is to process the Raw data into clean actionable insight and making the massive information easy to understand using the visualizations.**
 
