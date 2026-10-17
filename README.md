@@ -120,6 +120,26 @@ A multi-fact **Star Schema** architecture was established to optimize query perf
 
 ## Task 4: DAX Calculated Columns & Measures 
 
+#### Average Order Value (AOV)
+
+**DAX Formula:**
+```dax
+Average Order Value = 
+DIVIDE(
+    [Revenue], 
+    DISTINCTCOUNT(sales[Sale_ID]), 
+    0
+)
+
+#### Max Transaction Value
+
+**DAX Formula:**
+```dax
+Max Transaction Value = 
+MAXX(
+    sales, 
+    sales[Units] * RELATED(products[Product_Price])
+)
 
 
 
