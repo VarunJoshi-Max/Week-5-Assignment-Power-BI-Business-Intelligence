@@ -120,7 +120,7 @@ A multi-fact **Star Schema** architecture was established to optimize query perf
 
 ## Task 4: DAX Calculated Columns & Measures 
 
-#### Average Order Value (AOV)
+#### 1. Average Order Value (AOV)
 
 **DAX Formula:**
 
@@ -131,18 +131,148 @@ DIVIDE(
     0
 )
 
-#### Max Transaction Value
+#### 2. Profit Margin %
 
 **DAX Formula:**
 
-Max Transaction Value = 
-MAXX(
+Profit Margin % = 
+DIVIDE([Total Profit], [Revenue], 0)
+
+#### 3. Total Revenue
+
+**DAX Formula:**
+
+Revenue = 
+SUMX(
     sales, 
     sales[Units] * RELATED(products[Product_Price])
 )
 
+#### 4. Total Cost
 
+**DAX Formula:**
 
+Total Cost = 
+SUMX(
+    sales, 
+    sales[Units] * RELATED(products[Product_Cost])
+)
+
+#### 5. Total Profit
+
+**DAX Formula:**
+
+Total Profit = 
+[Revenue] - [Total Cost]
+
+#### 6. Total Transactions
+
+**DAX Formula:**
+
+Total Transactions = 
+COUNTROWS(sales)
+
+## DAX Measures – Mexico Toy Sales Dashboard
+
+### 1. Average Order Value (AOV)
+Calculates the average revenue generated per unique transaction by dividing total revenue by the distinct count of `Sale_ID`. `DIVIDE()` safely handles division by zero.
+
+### 2. Profit Margin %
+Measures the percentage of revenue retained as profit after deducting product costs. `DIVIDE()` calculates Total Profit divided by Revenue, returning 0 if the denominator is zero.
+
+### 3. Revenue
+Uses `SUMX()` to calculate revenue for every sales row by multiplying `Units` by the related product's `Product_Price`, then sums the results.
+
+### 4. Total Cost
+Calculates the total product cost by multiplying `Units` by the related product's `Product_Cost` for each sales row and summing the results using `SUMX()`.
+
+### 5. Total Profit
+Calculates total profit by subtracting Total Cost from Revenue.
+
+**Formula:** Total Profit = Revenue − Total Cost
+
+### 6. Total Transactions
+Counts the total number of rows in the `sales` table using `COUNTROWS()`. Each row represents one sales record, so this measures sales records rather than necessarily unique transactions.
+
+<img width="1593" height="704" alt="image" src="https://github.com/user-attachments/assets/626e35f0-e6d6-4dbe-9280-747e74143824" />
+
+## Task 5: Power BI Visualizations
+
+<img width="1015" height="470" alt="image" src="https://github.com/user-attachments/assets/fda03215-f769-47c2-8f31-90d6a06e3080" />
+
+## Task 6: Interactive Dashboard & Filters
+
+<img width="1197" height="665" alt="image" src="https://github.com/user-attachments/assets/a17c4fe2-6a42-48e2-bf7f-c1b5a56e4f59" />
+
+## Task 7: Business Insights & Recommendations
+
+### 1. Business Insights
+
+#### Insight 1: Overall Business Profitability
+
+The business generated $563.44 million in revenue and $172.31 million in total profit, with a reported profit margin of 30.58%. This indicates that the business retains approximately $30.58 in profit for every $100 of revenue, based on the dashboard's calculations.
+
+#### Insight 2: Toys Is the Highest Revenue-Generating Category
+
+Toys is the leading product category by revenue, contributing approximately $38 million, followed by Art & Crafts at around $34 million. This makes Toys the largest revenue contributor among the five displayed categories.
+
+#### Insight 3: Art & Crafts Leads in Units Sold
+
+Art & Crafts records the highest sales volume, at approximately 0.33 million units, followed by Toys at around 0.26 million units. Despite selling fewer units, Toys generates more revenue, suggesting differences in average selling prices or product mix.
+
+#### Insight 4: Ciudad de México Is the Top Profit-Generating City
+
+Ciudad de México ranks first in total profit at approximately $20 million, followed by Guadalajara and Monterrey. The leading cities contribute substantially to the displayed profit totals, making geographical performance an important area for further analysis.
+
+#### Insight 5: Electronics Is the Lowest-Performing Category by Revenue and Volume
+
+Electronics records the lowest revenue, at approximately $8 million, and the lowest unit sales among the five categories. Further analysis of its costs, profit margin, inventory, and monthly sales is required to determine whether the category is underperforming.
+
+#### Insight 6: Monthly Revenue Shows Significant Fluctuations
+
+Monthly revenue increases from approximately $19–20 million in early 2022 to a peak of around $35–36 million in early 2023. Revenue subsequently declines to approximately $26–27 million in the later months displayed. This pattern warrants investigation to identify the categories, cities, or periods contributing to the decline.
+
+### 2. Important Trends and Patterns
+
+Revenue concentration: Toys and Art & Crafts are the two largest revenue-generating categories.
+
+Sales volume versus revenue: Art & Crafts sells more units, while Toys generates more revenue.
+
+Geographical variation: Profit differs across cities, with Ciudad de México leading the displayed results.
+
+Changing monthly performance: Revenue rises significantly during late 2022 and early 2023 before declining later in 2023.
+
+Category performance gap: Electronics contributes substantially less revenue and volume than the other categories.
+
+### 3. Business Recommendations
+
+#### Recommendation 1: Strengthen the Top-Performing Categories
+
+Prioritize the availability of popular Toys and Art & Crafts products by monitoring stock levels, replenishment requirements, and sales trends. Evaluate opportunities for targeted promotions and product assortment improvements while monitoring their impact on profit margins.
+
+Expected benefit: Help maintain revenue from the strongest categories while reducing the risk of stockouts and missed sales.
+
+#### Recommendation 2: Investigate the Decline in Monthly Revenue
+
+Analyze revenue by product category, store city, and store location for the months before and after the decline. Compare sales volumes and average selling prices to determine whether the decrease is associated with particular products, locations, or changes in demand.
+
+Expected benefit: Identify the main contributors to declining revenue and develop targeted corrective actions rather than applying broad discounts across the business.
+
+#### Recommendation 3: Review Electronics Category Performance
+
+Examine Electronics' profit margin, inventory levels, product-level sales, and stock turnover before deciding whether to adjust prices, promotions, or product assortment.
+
+Expected benefit: Identify opportunities to improve category performance while avoiding unnecessary inventory accumulation or unprofitable discounting.
+
+#### Recommendation 4: Replicate Successful City-Level Practices
+
+Compare Ciudad de México, Guadalajara, and Monterrey with lower-profit cities using revenue, costs, units sold, and profit margin. Identify differences in product mix and sales performance before applying successful practices to other locations.
+
+Expected benefit: Improve decision-making around local sales strategies and identify opportunities for more balanced geographical performance.
+
+### 4. Conclusion
+
+The dashboard indicates that the business is profitable overall, with Toys leading in revenue, Art & Crafts leading in unit sales, and Ciudad de México ranking first in total profit. However, the decline in monthly revenue and the comparatively low performance of Electronics warrant further investigation. By strengthening leading categories, reviewing underperforming segments, and analyzing geographical and monthly trends, the business can make more informed decisions to support sustainable growth and profitability.
 
 
 
