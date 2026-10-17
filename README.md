@@ -18,9 +18,15 @@ In Data Analytics there are many tools to explore the massive volume data and ge
 
 ### Dataset Details:
 
-**Mexico Toy Sales** Sales & inventory data for a fictitious toy store chain in Mexico called Maven Toys, including information about products, stores, daily sales transactions, and current inventory levels at each location.
+**Mexico Toy Sales** Sales & inventory data for a fictitious toy store chain in Mexico called Maven Toys, including information about products, stores, daily sales transactions, and current inventory levels at each location. 
+
+**Dataset is stored in the local folder contains CSV files shown below:** 
 
 <img width="1009" height="260" alt="image" src="https://github.com/user-attachments/assets/fa50d487-7656-47ad-9c7f-1ed5db9d2ad5" />
+
+### Explore the Power BI interface:
+
+
 
 
 
