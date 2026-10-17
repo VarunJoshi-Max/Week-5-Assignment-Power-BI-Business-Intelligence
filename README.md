@@ -116,6 +116,12 @@ A multi-fact **Star Schema** architecture was established to optimize query perf
 * **Master Dimension Sharing (Conformed Dimensions):** Both `products` and `stores` serve as conformed dimensions shared between `sales` and `inventory`, allowing unified cross-analysis of sales performance against current inventory availability.
 
 
+<img width="1154" height="669" alt="image" src="https://github.com/user-attachments/assets/04b0eb3a-e133-4b2f-92a0-03279483de5c" />
+
+## Task 4: DAX Calculated Columns & Measures 
+
+
+
 
 
 
