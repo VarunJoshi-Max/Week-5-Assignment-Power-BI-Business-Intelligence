@@ -123,7 +123,7 @@ A multi-fact **Star Schema** architecture was established to optimize query perf
 #### Average Order Value (AOV)
 
 **DAX Formula:**
-```dax
+
 Average Order Value = 
 DIVIDE(
     [Revenue], 
@@ -134,12 +134,51 @@ DIVIDE(
 #### Max Transaction Value
 
 **DAX Formula:**
-```dax
+
 Max Transaction Value = 
 MAXX(
     sales, 
     sales[Units] * RELATED(products[Product_Price])
 )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
