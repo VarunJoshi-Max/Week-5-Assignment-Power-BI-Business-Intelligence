@@ -83,8 +83,6 @@ Lets close & apply the steps applied and move to model view in Power BI Desktop.
 ### Data Model Architecture
 A multi-fact **Star Schema** architecture was established to optimize query performance, support DAX calculations, and enable interactive cross-filtering across visuals.
 
-![Data Model Schema](screenshots/data_model.png)
-
 ### Table Classifications
 
 #### Dimension Tables (Lookup & Context)
