@@ -26,6 +26,24 @@ In Data Analytics there are many tools to explore the massive volume data and ge
 
 ### Explore the Power BI interface:
 
+<img width="1602" height="759" alt="image" src="https://github.com/user-attachments/assets/8e1b242e-d127-4483-8865-7e875a0b4ec7" />
+
+Select a blank report in Power BI interface and save the PBIX file as **Mexico Toy Sales** at desired path.
+
+<img width="1632" height="701" alt="image" src="https://github.com/user-attachments/assets/5ee5600f-62b1-4fa9-83a0-9f872a5bf015" />
+
+Select the Get Data and choose Text/CSV as CSV File in this datasets cannot be combined using folder because each CSV have separate structure and fields.
+
+<img width="535" height="756" alt="image" src="https://github.com/user-attachments/assets/256af27c-f446-4a5f-8ec1-986b83613a98" />
+
+Data has been imported to Power BI environment using the **ELT** method.
+
+<img width="523" height="570" alt="image" src="https://github.com/user-attachments/assets/666254fa-837a-4e50-bcc5-6412dcca790f" />
+
+
+
+
+
 
 
 
